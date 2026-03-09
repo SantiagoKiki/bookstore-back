@@ -35,6 +35,8 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
+
+
 nav a {
   color: var(--white);
   text-decoration: none;
@@ -88,6 +90,7 @@ nav a:hover { opacity: 1; }
 
 .btn-danger { border-color: #333; color: #666; }
 .btn-danger:hover { border-color: #ff4444; color: #ff4444; background: transparent; }
+
 
 .author-row {
   display: flex;

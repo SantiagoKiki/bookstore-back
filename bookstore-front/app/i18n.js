@@ -1,0 +1,232 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+
+const resources = {
+  es: {
+    translation: {
+      authors: "Autores",
+      newAuthor: "Nuevo autor",
+      books: "Libros",
+      newBook: "Nuevo libro",
+      favorites: "Favoritos",
+      backToAuthors: "← Volver a autores",
+      back: "← Volver",
+      edit: "Editar",
+      delete: "Eliminar",
+      save: "Guardar cambios",
+      create: "Crear",
+      saving: "Guardando...",
+      noAuthors: "— sin autores registrados —",
+      noBooks: "— sin libros registrados —",
+      noFavorites: "— aún no tienes favoritos —",
+      name: "Nombre",
+      birthDate: "Fecha de nacimiento",
+      description: "Descripción",
+      image: "URL de imagen",
+      isbn: "ISBN",
+      publishingDate: "Fecha de publicación",
+      editorial: "Editorial",
+      author: "Autor",
+      loadingEditorials: "Cargando editoriales...",
+      loadingAuthors: "Cargando autores...",
+      selectEditorial: "— selecciona una editorial —",
+      selectAuthor: "— selecciona un autor —",
+      errors: {
+        name: "El nombre es requerido",
+        birthDate: "La fecha de nacimiento es requerida",
+        description: "La descripción es requerida",
+        image: "La URL de la imagen es requerida",
+        isbn: "El ISBN es requerido",
+        publishingDate: "La fecha de publicación es requerida",
+        editorial: "Debes seleccionar una editorial",
+        author: "Debes seleccionar un autor",
+      }
+    }
+  },
+  en: {
+    translation: {
+      authors: "Authors",
+      newAuthor: "New author",
+      books: "Books",
+      newBook: "New book",
+      favorites: "Favorites",
+      backToAuthors: "← Back to authors",
+      back: "← Back",
+      edit: "Edit",
+      delete: "Delete",
+      save: "Save changes",
+      create: "Create",
+      saving: "Saving...",
+      noAuthors: "— no authors registered —",
+      noBooks: "— no books registered —",
+      noFavorites: "— no favorites yet —",
+      name: "Name",
+      birthDate: "Birth date",
+      description: "Description",
+      image: "Image URL",
+      isbn: "ISBN",
+      publishingDate: "Publishing date",
+      editorial: "Editorial",
+      author: "Author",
+      loadingEditorials: "Loading editorials...",
+      loadingAuthors: "Loading authors...",
+      selectEditorial: "— select an editorial —",
+      selectAuthor: "— select an author —",
+      errors: {
+        name: "Name is required",
+        birthDate: "Birth date is required",
+        description: "Description is required",
+        image: "Image URL is required",
+        isbn: "ISBN is required",
+        publishingDate: "Publishing date is required",
+        editorial: "You must select an editorial",
+        author: "You must select an author",
+      }
+    }
+  },
+  fr: {
+    translation: {
+      authors: "Auteurs",
+      newAuthor: "Nouvel auteur",
+      books: "Livres",
+      newBook: "Nouveau livre",
+      favorites: "Favoris",
+      backToAuthors: "← Retour aux auteurs",
+      back: "← Retour",
+      edit: "Modifier",
+      delete: "Supprimer",
+      save: "Enregistrer",
+      create: "Créer",
+      saving: "Enregistrement...",
+      noAuthors: "— aucun auteur enregistré —",
+      noBooks: "— aucun livre enregistré —",
+      noFavorites: "— pas encore de favoris —",
+      name: "Nom",
+      birthDate: "Date de naissance",
+      description: "Description",
+      image: "URL de l'image",
+      isbn: "ISBN",
+      publishingDate: "Date de publication",
+      editorial: "Éditorial",
+      author: "Auteur",
+      loadingEditorials: "Chargement des éditoriaux...",
+      loadingAuthors: "Chargement des auteurs...",
+      selectEditorial: "— sélectionnez un éditorial —",
+      selectAuthor: "— sélectionnez un auteur —",
+      errors: {
+        name: "Le nom est requis",
+        birthDate: "La date de naissance est requise",
+        description: "La description est requise",
+        image: "L'URL de l'image est requise",
+        isbn: "L'ISBN est requis",
+        publishingDate: "La date de publication est requise",
+        editorial: "Vous devez sélectionner un éditorial",
+        author: "Vous devez sélectionner un auteur",
+      }
+    }
+  },
+  de: {
+    translation: {
+      authors: "Autoren",
+      newAuthor: "Neuer Autor",
+      books: "Bücher",
+      newBook: "Neues Buch",
+      favorites: "Favoriten",
+      backToAuthors: "← Zurück zu Autoren",
+      back: "← Zurück",
+      edit: "Bearbeiten",
+      delete: "Löschen",
+      save: "Änderungen speichern",
+      create: "Erstellen",
+      saving: "Speichern...",
+      noAuthors: "— keine Autoren registriert —",
+      noBooks: "— keine Bücher registriert —",
+      noFavorites: "— noch keine Favoriten —",
+      name: "Name",
+      birthDate: "Geburtsdatum",
+      description: "Beschreibung",
+      image: "Bild-URL",
+      isbn: "ISBN",
+      publishingDate: "Erscheinungsdatum",
+      editorial: "Verlag",
+      author: "Autor",
+      loadingEditorials: "Verlage werden geladen...",
+      loadingAuthors: "Autoren werden geladen...",
+      selectEditorial: "— Verlag auswählen —",
+      selectAuthor: "— Autor auswählen —",
+      errors: {
+        name: "Name ist erforderlich",
+        birthDate: "Geburtsdatum ist erforderlich",
+        description: "Beschreibung ist erforderlich",
+        image: "Bild-URL ist erforderlich",
+        isbn: "ISBN ist erforderlich",
+        publishingDate: "Erscheinungsdatum ist erforderlich",
+        editorial: "Sie müssen einen Verlag auswählen",
+        author: "Sie müssen einen Autor auswählen",
+      }
+    }
+  },
+  pt: {
+    translation: {
+      authors: "Autores",
+      newAuthor: "Novo autor",
+      books: "Livros",
+      newBook: "Novo livro",
+      favorites: "Favoritos",
+      backToAuthors: "← Voltar aos autores",
+      back: "← Voltar",
+      edit: "Editar",
+      delete: "Excluir",
+      save: "Salvar alterações",
+      create: "Criar",
+      saving: "Salvando...",
+      noAuthors: "— nenhum autor registrado —",
+      noBooks: "— nenhum livro registrado —",
+      noFavorites: "— ainda sem favoritos —",
+      name: "Nome",
+      birthDate: "Data de nascimento",
+      description: "Descrição",
+      image: "URL da imagem",
+      isbn: "ISBN",
+      publishingDate: "Data de publicação",
+      editorial: "Editora",
+      author: "Autor",
+      loadingEditorials: "Carregando editoras...",
+      loadingAuthors: "Carregando autores...",
+      selectEditorial: "— selecione uma editora —",
+      selectAuthor: "— selecione um autor —",
+      errors: {
+        name: "O nome é obrigatório",
+        birthDate: "A data de nascimento é obrigatória",
+        description: "A descrição é obrigatória",
+        image: "A URL da imagem é obrigatória",
+        isbn: "O ISBN é obrigatório",
+        publishingDate: "A data de publicação é obrigatória",
+        editorial: "Você deve selecionar uma editora",
+        author: "Você deve selecionar um autor",
+      }
+    }
+  }
+};
+
+if (!i18n.isInitialized) {
+  i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+      resources,
+      lng: "es",
+      fallbackLng: "es",
+      supportedLngs: ["es", "en", "fr", "de", "pt"],
+      nonExplicitSupportedLngs: true,
+      detection: {
+        order: ["localStorage", "navigator"],
+        caches: ["localStorage"]
+      },
+      interpolation: { escapeValue: false },
+      debug: false
+    });
+}
+
+export default i18n;
